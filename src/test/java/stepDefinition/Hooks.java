@@ -17,19 +17,8 @@ public class Hooks {
 
 
     @After
-    public void afterScenario(Scenario scenario){
-        try {
-            String screenshotName = scenario.getName().replaceAll(" ", "_");
-            if (scenario.isFailed()) {
-                scenario.log("this is my failure message");
-                TakesScreenshot ts = (TakesScreenshot) driver;
-                byte[] screenshot = ts.getScreenshotAs(OutputType.BYTES);
-                scenario.attach(screenshot, "image/png", screenshotName);
-            }
-        } catch (Exception e) {
+    public void afterScenario(){
 
-            e.printStackTrace();
-        }
         System.out.println("This will run after the Scenario");
     }
 }
