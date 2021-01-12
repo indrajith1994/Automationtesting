@@ -1,16 +1,10 @@
 package util;
 
-import com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter;
-import io.cucumber.java.AfterStep;
-import io.cucumber.java.Scenario;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.sql.DriverManager;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
@@ -43,14 +37,7 @@ public class TestBase {
     }
 
 
-//    @AfterStep
-//    public void takeScreenshot(Scenario scenario) {
-//        if(scenario.isFailed()) {
-//            byte[] src=((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
-//            scenario.log(scenario.getName()+ "is failed");
-//            scenario.attach(src, scenario.getName()+".png", scenario.getName());
-//        }
-//    }
+
     public static void terminate(){
 
 //        driver.manage().deleteAllCookies();
